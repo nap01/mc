@@ -8,6 +8,13 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
+    volumes:
+      - ./data:/data
+      - ./plugins:/plugins
     tty: true
     stdin_open: true
     restart: unless-stopped
+
+volumes:
+  data:
+  plugins:
