@@ -7,14 +7,14 @@ services:
       - 25565:25565
     environment:
       EULA: "TRUE"
-      TYPE: "PAPER"
+      TYPE: "FABRIC"
+      MODRINTH_PROJECTS: "https://modrinth.com/mod/fabric-api,https://modrinth.com/mod/lithium,https://modrinth.com/mod/starlight,https://modrinth.com/mod/ferrite-core,https://modrinth.com/mod/memoryleakfix,https://modrinth.com/mod/carpet,https://modrinth.com/mod/carpet-extra,https://modrinth.com/mod/carpet-fixes,https://modrinth.com/mod/carpetgamerules,https://github.com/RubixDev/Rug,https://modrinth.com/mod/subtick,https://modrinth.com/mod/carpet-sky-additions,https://modrinth.com/mod/discarpet,https://modrinth.com/mod/scarpet-graphics,https://modrinth.com/mod/essentialaddons"
     volumes:
       - ./data:/data
-      - ./plugins:/plugins
+
     tty: true
     stdin_open: true
     restart: unless-stopped
 
 volumes:
   data:
-  plugins:
