@@ -5,11 +5,40 @@ services:
     image: itzg/minecraft-server
     ports:
       - 25565:25565
+      - 28016:28016
     environment:
-      EULA: "TRUE"
       TYPE: "QUILT"
+      SERVER_NAME: "Markville"
+      MOTD: ""
+      ICON: ""
+      MAX_PLAYERS: "50"
+      OPS: "crazymolerat,Grumpst3r"
+      ONLINE_MODE: "FALSE"
+      SNOOPER_ENABLED: "FALSE"
       REMOVE_OLD_MODS: "TRUE"
       MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,slumber,essentialaddons,discarpet,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,debugify,clean-logs,fastback,multiworld,skylands,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,audioplayer,betterleads"
+      VANILLATWEAKS_SHARECODE: ""
+      ENABLE_QUERY: "true"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "testing"
+      RCON_PORT: 25575
+      BROADCAST_RCON_TO_OPS: "TRUE"
+      BROADCAST_CONSOLE_TO_OPS: "TRUE"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "TRUE"
+      MODE: "survival"
+      FORCE_GAMEMODE: "FALSE"
+      PVP: "FALSE"
+      SPAWN_PROTECTION: "9"
+      ALLOW_NETHER: "TRUE"
+      GENERATE_STRUCTURES: "TRUE"
+      MAX_WORLD_SIZE: "10000"
+      MAX_BUILD_HEIGHT: "256"
+      MAX_TICK_TIME: "60000"
+      SPAWN_ANIMALS: "TRUE"
+      SPAWN_MONSTERS: "TRUE"
+      SPAWN_NPCS: "TRUE"
+      EULA: "TRUE"
     volumes:
       - ./data:/data
 
