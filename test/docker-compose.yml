@@ -8,6 +8,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "QUILT"
+      MODRINTH_PROJECTS: "fabric-api,fastback,multiworld,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,tabtps,debugify,thorium,clean-logs,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,carpet,carpet-extra,carpet-fixes,carpetgamerules,carpet-sky-additions,scarpet-graphics,slumber,essentialaddons,multitool,starter-kit,cycle-paintings,inventory-essentials,compass-commands,skylands,highspeed-rail"
     volumes:
       - ./data:/data
 
