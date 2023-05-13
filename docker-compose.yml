@@ -7,12 +7,16 @@ services:
       - 25565:25565
       - 28016:28016
     environment:
+      VERSION: "1.19.4"
       TYPE: "QUILT"
       SERVER_NAME: "Markville"
       MOTD: ""
       ICON: ""
+      TZ: ""
       MAX_PLAYERS: "50"
       MEMORY: "8G"
+      INIT_MEMORY: "4G"
+      MAX_MEMORY: "8G"
       OPS: "crazymolerat,Grumpst3r,feralkittybeans"
       ENABLE_WHITELIST: "TRUE"
       WHITELIST: "crazymolerat,Grumpst3r,feralkittybeans"
@@ -22,6 +26,8 @@ services:
       REMOVE_OLD_MODS: "TRUE"
       MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,slumber,essentialaddons,discarpet,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,debugify,clean-logs,fastback,multiworld,skylands,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,audioplayer,betterleads"
       VANILLATWEAKS_SHARECODE: ""
+      USE_AIKAR_FLAGS: "TRUE"
+      LOG_TIMESTAMP: "TRUE"
       ENABLE_JMX: "TRUE"
       ENABLE_QUERY: "TRUE"
       ENABLE_RCON: "TRUE"
