@@ -6,7 +6,7 @@
 git clone https://github.com/nap01/mc ~/mc
 ```
 
-If you don't have git, follow this guide to download.
+*If you don't have git, follow this guide to download.*
 
 2. Run this to add the directories to mount as volumes:
 
