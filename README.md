@@ -16,3 +16,15 @@ mkdir ~/mc/data/plugins
 mkdir ~/mc/data/config
 mkdir ~/mc/data/mods
 ```
+
+3. To start/stop the container run
+4. 
+```bash
+docker compose up -d
+```
+
+or
+
+```bash
+docker compose down -d
+```
