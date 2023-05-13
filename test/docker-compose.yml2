@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "QUILT"
+      MODRINTH_PROJECTS: "fabric-api,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,tabtps,debugify,thorium,clean-logs,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder"
+    volumes:
+      - ./data:/data
+
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+volumes:
+  data:
