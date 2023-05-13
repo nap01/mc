@@ -9,7 +9,7 @@ services:
       EULA: "TRUE"
       TYPE: "QUILT"
       REMOVE_OLD_MODS: "TRUE"
-      MODRINTH_PROJECTS: "fabric-api,fastback,multiworld,better-fabric-console,mods-command,luckperms,player-roles,factions,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,bmarker,holograms,refined-advancements,tabtps,debugify,thorium,clean-logs,mod-loading-screen,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,scarpet-graphics,slumber,essentialaddons,huskhomes,multitool,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,inventory-essentials,compass-commands,audioplayer,betterleads,directionhud,skylands,highspeed-rail"
+      MODRINTH_PROJECTS: "fabric-api,fastback,multiworld,better-fabric-console,mods-command,luckperms,player-roles,factions,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,bmarker,refined-advancements,tabtps,debugify,thorium,clean-logs,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder"
     volumes:
       - ./data:/data
 
