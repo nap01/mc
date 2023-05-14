@@ -3,6 +3,9 @@ version: "3"
 services:
   web:
     image: itzg/rcon
+    ports:
+      - 4326:4326
+      - 4327:4327    
     environment:
       RWA_USERNAME: admin
       RWA_PASSWORD: admin
@@ -11,9 +14,8 @@ services:
       RWA_RCON_HOST: mc
       # needs to match the password configured for the container, which is 'minecraft' by default
       RWA_RCON_PASSWORD: minecraft
-    ports:
-      - 4326:4326
-      - 4327:4327
+    volumes:
+      - /opt/rcon-web-admin/db:/rwa-db
   mc:
     image: itzg/minecraft-server
     ports:
@@ -24,7 +26,7 @@ services:
       TYPE: "QUILT"
       SERVER_NAME: "Minecraftia"
       MOTD: "Welcome to Minecraftia"
-      ICON: ""
+      ICON: "/data/assets/cat-fight-icon-64.png"
       TZ: "America/Los_Angeles"
       MAX_PLAYERS: "50"
       MEMORY: "8G"
@@ -74,3 +76,4 @@ services:
 
 volumes:
   data:
+  backup:
