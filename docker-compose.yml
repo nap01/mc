@@ -1,21 +1,6 @@
 version: "3"
 
 services:
-  web:
-    image: itzg/rcon
-    ports:
-      - 4326:4326
-      - 4327:4327    
-    environment:
-      RWA_USERNAME: admin
-      RWA_PASSWORD: testing
-      RWA_ADMIN: "TRUE"
-      # is referring to the hostname of 'mc' compose service below
-      RWA_RCON_HOST: mc
-      # needs to match the password configured for the container, which is 'minecraft' by default
-      RWA_RCON_PASSWORD: testing
-    volumes:
-      - /opt/rcon-web-admin/db:/rwa-db
   mc:
     image: itzg/minecraft-server
     ports:
@@ -64,7 +49,7 @@ services:
       EULA: "TRUE"
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD: "testing"
-      RCON_PORT: 28016
+      RCON_PORT: 25575
       BROADCAST_RCON_TO_OPS: "TRUE"
       BROADCAST_CONSOLE_TO_OPS: "TRUE"
       RCON_CMDS_STARTUP:  |-
@@ -82,10 +67,8 @@ services:
         /pregen start 200
     volumes:
       - ./data:/data
-
     tty: true
     stdin_open: true
     restart: unless-stopped
-
 volumes:
   data:
