@@ -1,31 +1,45 @@
 version: "3"
 
 services:
+  web:
+    image: itzg/rcon
+    environment:
+      RWA_USERNAME: admin
+      RWA_PASSWORD: admin
+      RWA_ADMIN: "TRUE"
+      # is referring to the hostname of 'mc' compose service below
+      RWA_RCON_HOST: mc
+      # needs to match the password configured for the container, which is 'minecraft' by default
+      RWA_RCON_PASSWORD: minecraft
+    ports:
+      - 4326:4326
+      - 4327:4327
   mc:
     image: itzg/minecraft-server
     ports:
       - 25565:25565
-      - 28016:28016
+      - 25575:25575
     environment:
       VERSION: "1.19.4"
       TYPE: "QUILT"
-      SERVER_NAME: "Markville"
-      MOTD: ""
+      SERVER_NAME: "Minecraftia"
+      MOTD: "Welcome to Minecraftia"
       ICON: ""
-      TZ: ""
+      TZ: "America/Los_Angeles"
       MAX_PLAYERS: "50"
       MEMORY: "8G"
       INIT_MEMORY: "4G"
       MAX_MEMORY: "8G"
-      OPS: "crazymolerat,Grumpst3r,feralkittybeans"
+      OPS: ""
+      OPS_FILE: "/data/ops.sjon"
       ENABLE_WHITELIST: "TRUE"
-      WHITELIST: "crazymolerat,Grumpst3r,feralkittybeans"
-      WHITELIST_FILE: "/extra/whitelist.json"
+      WHITELIST: ""
+      WHITELIST_FILE: "/data/whitelist.json"
       ONLINE_MODE: "TRUE"
       SNOOPER_ENABLED: "FALSE"
-      REMOVE_OLD_MODS: "TRUE"
+      REMOVE_OLD_MODS: "FALSE"
       MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,slumber,essentialaddons,discarpet,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,debugify,clean-logs,fastback,multiworld,skylands,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,audioplayer,betterleads"
-      VANILLATWEAKS_SHARECODE: ""
+      VANILLATWEAKS_SHARECODE: "y4czps"
       USE_AIKAR_FLAGS: "TRUE"
       LOG_TIMESTAMP: "TRUE"
       ENABLE_JMX: "TRUE"
