@@ -63,7 +63,7 @@ services:
       SPAWN_NPCS: "TRUE"
       EULA: "TRUE"
       ENABLE_RCON: "TRUE"
-      RCON_PASSWORD: "testing"
+      RCON_PASSWORD: minecraft
       RCON_PORT: 25575
       BROADCAST_RCON_TO_OPS: "TRUE"
       BROADCAST_CONSOLE_TO_OPS: "TRUE"
