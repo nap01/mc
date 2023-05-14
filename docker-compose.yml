@@ -8,7 +8,7 @@ services:
       - 4327:4327    
     environment:
       RWA_USERNAME: admin
-      RWA_PASSWORD: admin
+      RWA_PASSWORD: testing
       RWA_ADMIN: "TRUE"
       # is referring to the hostname of 'mc' compose service below
       RWA_RCON_HOST: mc
@@ -46,11 +46,6 @@ services:
       LOG_TIMESTAMP: "TRUE"
       ENABLE_JMX: "TRUE"
       ENABLE_QUERY: "TRUE"
-      ENABLE_RCON: "TRUE"
-      RCON_PASSWORD: "testing"
-      RCON_PORT: 25575
-      BROADCAST_RCON_TO_OPS: "TRUE"
-      BROADCAST_CONSOLE_TO_OPS: "TRUE"
       ENABLE_COMMAND_BLOCK: "TRUE"
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "TRUE"
       MODE: "survival"
@@ -67,6 +62,24 @@ services:
       SPAWN_MONSTERS: "TRUE"
       SPAWN_NPCS: "TRUE"
       EULA: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "testing"
+      RCON_PORT: 25575
+      BROADCAST_RCON_TO_OPS: "TRUE"
+      BROADCAST_CONSOLE_TO_OPS: "TRUE"
+      RCON_CMDS_STARTUP:  |-
+        /pregen start 200
+        /backup enable
+        /backup set-shutdown-action full-gc
+        /backup set-autoback-action full
+        /backup set-autoback-wait 360
+        /backup set-retention gfs
+        /backup set-remote https://github.com/nap01/mc-bak1
+      RCON_CMDS_FIRST_CONNECT: |-
+        /pregen stop
+      RCON_CMDS_LAST_DISCONNECT: |-
+        /kill @e[type=minecraft:boat]
+        /pregen start 200
     volumes:
       - ./data:/data
 
@@ -76,4 +89,3 @@ services:
 
 volumes:
   data:
-  backup:
