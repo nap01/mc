@@ -16,7 +16,7 @@ services:
       TZ: "America/Los_Angeles"
       MODE: "creative"
       LEVEL_TYPE: "flat"
-      GENERATOR_SETTINGS: "minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone,minecraft:desert"
+      GENERATOR_SETTINGS: "minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone;minecraft:desert"
       FORCE_GAMEMODE: "FALSE"
       DIFFICULTY: "normal"
       PVP: "FALSE"
