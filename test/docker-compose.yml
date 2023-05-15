@@ -13,6 +13,20 @@ services:
       MOTD: "Welcome to Minecraftia"
       ICON: "/data/assets/cat-fight-icon-64.png"
       TZ: "America/Los_Angeles"
+      MODE: "creative"
+      LEVEL_TYPE: "flat"
+      GENERATOR_SETTINGS: "minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone,minecraft:desert"
+      FORCE_GAMEMODE: "FALSE"
+      DIFFICULTY: "normal"
+      PVP: "FALSE"
+      SPAWN_PROTECTION: "9"
+      ALLOW_NETHER: "TRUE"
+      GENERATE_STRUCTURES: "FALSE"
+      MAX_TICK_TIME: "-1"
+      SPAWN_ANIMALS: "TRUE"
+      SPAWN_MONSTERS: "TRUE"
+      SPAWN_NPCS: "TRUE"
+      EULA: "TRUE"
       MAX_PLAYERS: "50"
       MEMORY: "8G"
       INIT_MEMORY: "4G"
@@ -31,20 +45,6 @@ services:
       ENABLE_QUERY: "TRUE"
       ENABLE_COMMAND_BLOCK: "TRUE"
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "TRUE"
-      MODE: "creative"
-      LEVEL_TYPE: "flat"
-      GENERATOR_SETTINGS: "minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone,minecraft:desert"
-      FORCE_GAMEMODE: "FALSE"
-      DIFFICULTY: "normal"
-      PVP: "FALSE"
-      SPAWN_PROTECTION: "9"
-      ALLOW_NETHER: "TRUE"
-      GENERATE_STRUCTURES: "FALSE"
-      MAX_TICK_TIME: "-1"
-      SPAWN_ANIMALS: "TRUE"
-      SPAWN_MONSTERS: "TRUE"
-      SPAWN_NPCS: "TRUE"
-      EULA: "TRUE"
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD: "testing"
       RCON_PORT: 25575
@@ -57,6 +57,7 @@ services:
         /backup set-autoback-wait 360
         /backup set-retention gfs
         /backup set-remote https://github.com/nap01/mc-bak1
+        /serv-freeze true
       RCON_CMDS_LAST_DISCONNECT: |-
         /kill @e[type=minecraft:boat]
     volumes:
