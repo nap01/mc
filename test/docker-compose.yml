@@ -1,0 +1,68 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+      - 28016:28016
+    environment:
+      VERSION: "1.19.4"
+      TYPE: "QUILT"
+      SERVER_NAME: "Minecraftia"
+      MOTD: "Welcome to Minecraftia"
+      ICON: "/data/assets/cat-fight-icon-64.png"
+      TZ: "America/Los_Angeles"
+      MAX_PLAYERS: "50"
+      MEMORY: "8G"
+      INIT_MEMORY: "4G"
+      MAX_MEMORY: "8G"
+      OPS_FILE: "/data/ops.json"
+      ENABLE_WHITELIST: "TRUE"
+      WHITELIST_FILE: "/data/whitelist.json"
+      ONLINE_MODE: "TRUE"
+      SNOOPER_ENABLED: "FALSE"
+      REMOVE_OLD_MODS: "FALSE"
+      MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,slumber,essentialaddons,discarpet,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,debugify,clean-logs,fastback,multiworld,skylands,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,audioplayer,betterleads,chunk-loaders,tesseract,redstone-multimeter,moving-elevators,rainbow-lamp,fabricautocrafter,wormhole,travelersbackpack,plethora-peripherals,trinkets,simply-caterpillar,supermartijn642s-config-lib,supermartijn642s-core-lib"
+      VANILLATWEAKS_SHARECODE: "y4czps"
+      USE_AIKAR_FLAGS: "TRUE"
+      LOG_TIMESTAMP: "TRUE"
+      ENABLE_JMX: "TRUE"
+      ENABLE_QUERY: "TRUE"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "TRUE"
+      MODE: "creative"
+      FORCE_GAMEMODE: "FALSE"
+      DIFFICULTY: "hard"
+      PVP: "FALSE"
+      SPAWN_PROTECTION: "9"
+      ALLOW_NETHER: "TRUE"
+      GENERATE_STRUCTURES: "TRUE"
+      MAX_WORLD_SIZE: "10000"
+      MAX_BUILD_HEIGHT: "256"
+      MAX_TICK_TIME: "60000"
+      SPAWN_ANIMALS: "TRUE"
+      SPAWN_MONSTERS: "TRUE"
+      SPAWN_NPCS: "TRUE"
+      EULA: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "testing"
+      RCON_PORT: 25575
+      BROADCAST_RCON_TO_OPS: "TRUE"
+      BROADCAST_CONSOLE_TO_OPS: "TRUE"
+      RCON_CMDS_FIRST_CONNECT:  |-
+        /backup enable
+        /backup set-shutdown-action full-gc
+        /backup set-autoback-action full
+        /backup set-autoback-wait 360
+        /backup set-retention gfs
+        /backup set-remote https://github.com/nap01/mc-bak1
+      RCON_CMDS_LAST_DISCONNECT: |-
+        /kill @e[type=minecraft:boat]
+    volumes:
+      - ./data:/data
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+volumes:
+  data:
