@@ -7,6 +7,7 @@ services:
       - 25565:25565
       - 28016:28016
     environment:
+      EULA: "TRUE"
       VERSION: "1.19.4"
       TYPE: "QUILT"
       SERVER_NAME: "Minecraftia"
@@ -23,10 +24,9 @@ services:
       ALLOW_NETHER: "TRUE"
       GENERATE_STRUCTURES: "FALSE"
       MAX_TICK_TIME: "-1"
-      SPAWN_ANIMALS: "TRUE"
-      SPAWN_MONSTERS: "TRUE"
-      SPAWN_NPCS: "TRUE"
-      EULA: "TRUE"
+      SPAWN_ANIMALS: "FALSE"
+      SPAWN_MONSTERS: "FALSE"
+      SPAWN_NPCS: "FALSE"
       MAX_PLAYERS: "50"
       MEMORY: "8G"
       INIT_MEMORY: "4G"
