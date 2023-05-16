@@ -1,6 +1,6 @@
 # Minecraft Docker Repo
 
-1. Run this to download the Repo
+## 1. Run this to download the Repo
 
 ```bash
 git clone https://github.com/nap01/mc ~/git/mc
@@ -8,7 +8,7 @@ git clone https://github.com/nap01/mc ~/git/mc
 
 *If you don't have git, follow [this guide](https://github.com/git-guides/install-git) to install.*
 
-2. Add the directories that we will mount as volumes:
+## 2. Add the directories that we will mount as volumes:
 
 You can run `sudo chmod +x data.sh` & `sudo ./data.sh`
 
@@ -23,7 +23,7 @@ mkdir ./data/config
 mkdir ./data/mods
 ```
 
-3. Start/stop the container:
+## 3. Start/stop the container:
 
 To test if the config works, run:
 
@@ -42,7 +42,7 @@ and stop it with:
 ```bash
 docker compose down
 ```
-4. Controlling the server 
+## 4. Controlling the server 
 
 RCON is enabled by default, so you can exec into the container to access the Minecraft server console:
 
