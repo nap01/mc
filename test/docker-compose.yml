@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   mc-test:
     image: itzg/minecraft-server
     ports:
@@ -8,49 +9,49 @@ services:
       - 28016:28016
     environment:
       EULA: "TRUE"
-      VERSION: "1.19.4"
-      TYPE: "QUILT"
       SERVER_NAME: "Minecraftia"
-      MOTD: "Welcome to Minecraftia"
+      MOTD: "A §l§cQuilt§r Minecraft Server: §ntech"
       ICON: "/data/assets/cat-fight-icon-64.png"
       TZ: "America/Los_Angeles"
-      MODE: "creative"
+      VERSION: "1.19.4"
+      TYPE: "QUILT"
       LEVEL_TYPE: "flat"
-      GENERATOR_SETTINGS: "minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone;minecraft:desert"
+      MODE: "creative"
       FORCE_GAMEMODE: "FALSE"
       DIFFICULTY: "normal"
       PVP: "FALSE"
       SPAWN_PROTECTION: "9"
       ALLOW_NETHER: "TRUE"
       GENERATE_STRUCTURES: "FALSE"
-      MAX_TICK_TIME: "-1"
       SPAWN_ANIMALS: "FALSE"
       SPAWN_MONSTERS: "FALSE"
       SPAWN_NPCS: "FALSE"
-      MAX_PLAYERS: "50"
+      MAX_PLAYERS: "20"
+      OPS: "${OPS}"
+      ENABLE_WHITELIST: "TRUE"
+      OVERRIDE_WHITELIST: "TRUE"
+      WHITELIST: "${WHITELIST}"
+      ONLINE_MODE: "TRUE"
+      SNOOPER_ENABLED: "FALSE"
+      REMOVE_OLD_MODS: "TRUE"
+      MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,slumber,essentialaddons,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,chunky,debugify,clean-logs,fastback,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,supermartijn642s-config-lib,supermartijn642s-core-lib,chunk-loaders,tesseract,redstone-multimeter,moving-elevators,rainbow-lamp,fabricautocrafter,wormhole,travelersbackpack"
+      MODRINTH_DOWNLOAD_OPTIONAL_DEPENDENCIES: "TRUE"
+      VANILLATWEAKS_SHARECODE: "PWxtRw"
       MEMORY: "8G"
       INIT_MEMORY: "4G"
       MAX_MEMORY: "8G"
-      OPS_FILE: "/data/ops.json"
-      ENABLE_WHITELIST: "TRUE"
-      WHITELIST_FILE: "/data/whitelist.json"
-      ONLINE_MODE: "TRUE"
-      SNOOPER_ENABLED: "FALSE"
-      REMOVE_OLD_MODS: "FALSE"
-      MODRINTH_PROJECTS: "fabric-api,carpet,carpet-extra,carpet-fixes,carpetgamerules,subtick,carpet-sky-additions,slumber,essentialaddons,discarpet,lithium,starlight,ferrite-core,memoryleakfix,lazydfu,c2me-fabric,fastload,chunky,chunkyborder,debugify,clean-logs,fastback,multiworld,skylands,better-fabric-console,mods-command,suggestion-tweaker,styled-chat,styledplayerlist,afkdisplay,directionhud,refined-advancements,tabtps,multitool,highspeed-rail,starter-kit,no-hostiles-around-campfire,kiwi,companion,cycle-paintings,compass-commands,cc-tweaked,calibrated,advanced-networking,sc-peripherals,weather-detector,omnihopper,fabric-language-kotlin,yacg,audioplayer,betterleads,supermartijn642s-config-lib,supermartijn642s-core-lib,chunk-loaders,tesseract,redstone-multimeter,moving-elevators,rainbow-lamp,fabricautocrafter,wormhole,cardinal-components-api,travelersbackpack"
-      VANILLATWEAKS_SHARECODE: "PWxtRw"
+      MAX_TICK_TIME: "-1"
       USE_AIKAR_FLAGS: "TRUE"
       LOG_TIMESTAMP: "TRUE"
       ENABLE_JMX: "TRUE"
       ENABLE_QUERY: "TRUE"
       ENABLE_COMMAND_BLOCK: "TRUE"
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "TRUE"
-      ENABLE_RCON: "TRUE"
-      RCON_PASSWORD: "testing"
-      RCON_PORT: 25575
       BROADCAST_RCON_TO_OPS: "TRUE"
       BROADCAST_CONSOLE_TO_OPS: "TRUE"
-      RCON_CMDS_FIRST_CONNECT:  |-
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "${RCON_PASS}"
+      RCON_CMDS_STARTUP: |-
         /backup enable
         /backup set-shutdown-action full-gc
         /backup set-autoback-action full
@@ -65,5 +66,6 @@ services:
     tty: true
     stdin_open: true
     restart: unless-stopped
+
 volumes:
   data:
